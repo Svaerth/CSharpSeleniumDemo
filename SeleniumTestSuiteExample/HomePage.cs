@@ -10,8 +10,6 @@ namespace SeleniumTestSuiteExample
 
         protected override string URL => "http://automationpractice.com/index.php";
         protected override string PageTitle => "My Store";
-        public HomePage(IWebDriver driver, bool shouldNavigateManually) : base(driver, shouldNavigateManually)
-        { }
 
     }
 }
