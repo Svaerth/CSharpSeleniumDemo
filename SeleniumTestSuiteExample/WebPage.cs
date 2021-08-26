@@ -52,6 +52,21 @@ namespace SeleniumTestSuiteExample
             Create<T>(driver);
         }
 
+        public static bool IsOnWebPage<T>(IWebDriver driver) where T : WebPage, new()
+        {
+            //Create() naturally throws an exception if the driver is not currently navigated
+            //to the expected webpage.
+            try
+            {
+                Create<T>(driver);
+                return true;
+            }
+            catch(Exception)
+            {
+                return false;
+            }
+        }
+
         protected abstract string URL { get; }
 
         protected IWebDriver driver;
