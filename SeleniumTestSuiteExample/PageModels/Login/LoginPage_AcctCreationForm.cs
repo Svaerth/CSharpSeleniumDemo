@@ -23,19 +23,7 @@ namespace SeleniumTestSuiteExample
             }
         }
 
-        public bool IsShowingAccountCreationForm()
-        {
-            
-            try
-            {
-                _ = accountCreationForm;
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
+        public bool IsShowingAccountCreationForm => accountCreationForm != null;
         
         
         /// <summary>
@@ -64,7 +52,7 @@ namespace SeleniumTestSuiteExample
             registerAcctButton.Click();
         }
 
-        private IWebElement accountCreationForm => driver.FindElement(By.Id("account-creation_form"));
+        private IWebElement accountCreationForm => driver.TryFindElement(By.Id("account-creation_form"));
 
         #region personal info form fields
         public IWebElement personalInfo_EmailField => accountCreationForm.FindElement(By.Id("email"));

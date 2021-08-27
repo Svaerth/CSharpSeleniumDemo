@@ -7,7 +7,6 @@ namespace SeleniumTestSuiteExample
 {
     class ConfirmOrderPage : WebPage
     {
-
         public void ConfirmOrder()
         {
             confirmButton.Click();
@@ -25,8 +24,6 @@ namespace SeleniumTestSuiteExample
         protected override string URL => URLPrefix + GetStringForPaymentType(defaultPaymentType) + URLSuffix;
         protected override string PageTitle => "My Store";
 
-        private IWebElement confirmButton => driver.FindElement(By.CssSelector("#cart_navigation button"));
-
         protected override void EnsurePageIsCorrect()
         {
             if (!driver.Url.StartsWith(URLPrefix) || !driver.Url.EndsWith(URLSuffix))
@@ -34,6 +31,8 @@ namespace SeleniumTestSuiteExample
                 throw new UnexpectedPageException("invalid url: " + driver.Url + ", expected format: " + URLPrefix + "<payment type>" + URLSuffix);
             }
         }
+
+        private IWebElement confirmButton => driver.FindElement(By.CssSelector("#cart_navigation button"));
 
         string GetStringForPaymentType(PaymentType type)
         {
