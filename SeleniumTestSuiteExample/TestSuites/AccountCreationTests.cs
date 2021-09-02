@@ -40,7 +40,7 @@ namespace SeleniumTestSuiteExample
             {
                 LoginPage loginPage = WebPage.NavigateToPage<LoginPage>(driver);
                 loginPage.BeginAccountCreation(RandomStringGenerator.Generate(10) + "@gmail.com");
-                Assert.IsTrue(loginPage.IsShowingAccountCreationForm());
+                Assert.IsTrue(loginPage.IsShowingAccountCreationForm);
             }
         }
 

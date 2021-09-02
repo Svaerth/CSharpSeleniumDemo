@@ -15,7 +15,7 @@ namespace SeleniumTestSuiteExample
         {
             using (var driver = WebDriverFactory.CreateWebDriver())
             {
-                WebPage.NavigateToPage<LoginPage>(driver).Login(TestUser.Email, TestUser.Password);
+                WebPage.NavigateToPage<LoginPage>(driver).Login(InputArguments.TestUserEmail, InputArguments.TestUserPassword);
                 WebPage.NavigateToPage<ProductPage>(driver).AddToCart();
                 WebPage.NavigateToPage<ConfirmOrderPage>(driver).ConfirmOrder();
                 WebPage.AssertIsOnWebPage<OrderConfirmationPage>(driver);

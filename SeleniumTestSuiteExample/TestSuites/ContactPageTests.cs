@@ -37,7 +37,7 @@ namespace SeleniumTestSuiteExample
         {
             using (var driver = WebDriverFactory.CreateWebDriver())
             {
-                WebPage.NavigateToPage<LoginPage>(driver).Login(TestUser.Email, TestUser.Password);
+                WebPage.NavigateToPage<LoginPage>(driver).Login(InputArguments.TestUserEmail, InputArguments.TestUserPassword);
                 ContactPage contactPage = WebPage.NavigateToPage<ContactPage>(driver);
                 contactPage.SelectOrderReference();
                 Assert.IsTrue(contactPage.AProductPickerIsShowing);
@@ -49,7 +49,7 @@ namespace SeleniumTestSuiteExample
         {
             using (var driver = WebDriverFactory.CreateWebDriver())
             {
-                WebPage.NavigateToPage<LoginPage>(driver).Login(TestUser.Email, TestUser.Password);
+                WebPage.NavigateToPage<LoginPage>(driver).Login(InputArguments.TestUserEmail, InputArguments.TestUserPassword);
                 ContactPage contactPage = WebPage.NavigateToPage<ContactPage>(driver);
                 contactPage.SelectSubjectHeading(ContactPage.SubjectHeading.CustomerService);
                 contactPage.enterEmail("invalid email");
@@ -63,7 +63,7 @@ namespace SeleniumTestSuiteExample
         {
             using (var driver = WebDriverFactory.CreateWebDriver())
             {
-                WebPage.NavigateToPage<LoginPage>(driver).Login(TestUser.Email, TestUser.Password);
+                WebPage.NavigateToPage<LoginPage>(driver).Login(InputArguments.TestUserEmail, InputArguments.TestUserPassword);
                 ContactPage contactPage = WebPage.NavigateToPage<ContactPage>(driver);
                 contactPage.SelectSubjectHeading(ContactPage.SubjectHeading.CustomerService);
                 contactPage.pressSendButton();
@@ -76,7 +76,7 @@ namespace SeleniumTestSuiteExample
         {
             using (var driver = WebDriverFactory.CreateWebDriver())
             {
-                WebPage.NavigateToPage<LoginPage>(driver).Login(TestUser.Email, TestUser.Password);
+                WebPage.NavigateToPage<LoginPage>(driver).Login(InputArguments.TestUserEmail, InputArguments.TestUserPassword);
                 ContactPage contactPage = WebPage.NavigateToPage<ContactPage>(driver);
                 contactPage.SelectSubjectHeading(ContactPage.SubjectHeading.CustomerService);
                 contactPage.enterMessage("test message");

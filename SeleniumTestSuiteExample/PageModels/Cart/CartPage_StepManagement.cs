@@ -93,7 +93,7 @@ namespace SeleniumTestSuiteExample
                 case Step.SignIn:
                     if (WebPage.IsOnWebPage<LoginPage>(driver))
                     {
-                        WebPage.Create<LoginPage>(driver).Login(TestUser.Email, TestUser.Password);
+                        WebPage.Create<LoginPage>(driver).Login(InputArguments.TestUserEmail, InputArguments.TestUserPassword);
                     }
                     break;
                 case Step.Address:
